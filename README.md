@@ -3,4 +3,4 @@ ARTU Predictive Pethod // Statistical Reference Method // Direct  Multi-Step  Fo
 
 -Five algorithms description allowing to make a benchmark for the forecast of meteorological time series
 
--Dedicated matrices + code concerning the ARTU method
+-Dedicated matrices + code (.m files) concerning the ARTU method

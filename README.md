@@ -1,5 +1,5 @@
 # ARTU
-ARTU Predictive Pethod // Statistical Reference Method // Direct  Multi-Step  Forecast Strategy
+ARTU Predictive Method // Statistical Reference Method // Direct  Multi-Step  Forecast Strategy
 
 - Five algorithms descriptions (pseudo-codes) allowing to make a benchmark for the forecast of meteorological time series,
 

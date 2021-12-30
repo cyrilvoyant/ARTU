@@ -1,0 +1,515 @@
+\documentclass[preprint,12pt,3p]{elsarticle}
+\usepackage{multirow}
+%\usepackage{cite}
+\usepackage{epsfig} %% for loading postscript figures
+\usepackage{graphicx}
+\usepackage{soul}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+%\usepackage[noend]{algpseudocode}	
+%\usepackage{hyperref}	
+\usepackage{array}
+%\usepackage{flushend}
+\usepackage{subfigure}
+\usepackage{framed} % Framing content
+\usepackage{multicol} % Multiple columns 
+\usepackage{ulem} 
+\usepackage[title]{appendix}
+\usepackage{lscape}
+\usepackage{hyperref}
+\usepackage[dvipsnames]{xcolor}
+
+
+
+
+\usepackage{ifthen}
+			
+\usepackage{nomencl} % Nomenclature package
+\makenomenclature
+		
+\usepackage{enumitem}	
+\setlist{nolistsep} % or \setlist{noitemsep} to leave space around whole list
+%% Use the option review to obtain double line spacing
+%% \documentclass[preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn]{elsarticle}
+%% \documentclass[final,3p,times]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn]{elsarticle}
+%% \documentclass[final,5p,times]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn]{elsarticle}
+
+%% if you use PostScript figures in your article
+%% use the graphics package for simple commands
+%% \usepackage{graphics}
+%% or use the graphicx package for more complicated commands
+%% \usepackage{graphicx}
+%% or use the epsfig package if you prefer to use the old commands
+%% \usepackage{epsfig}
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers after \end{frontmatter}.
+\usepackage{lineno}
+\DeclareMathOperator*{\argmin}{argmin}
+
+% commentaires couleurs
+\newcommand{\cyr}[1]{{\color{blue} #1}}       % cyril
+\newcommand{\daz}[1]{{\color{red} #1}}       % dazhi
+\newcommand{\luis}[1]{{\color{red} #1}}       % luis
+\newcommand{\jl}[1]{{\color{green} #1}}
+
+%\bibliographystyle{model2-names.bst}\biboptions{authoryear} 
+%\bibliographystyle{cas-model2-names}
+%\bibliographystyle{elsarticle-num}
+\bibliographystyle{elsarticle-num-names}
+%\bibliographystyle{unsrt}
+%\bibliographystyle{elsarticle-harv} 
+\journal{Renewable Energy}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Forecasting Benchmarks for Meteorological Time Series: Focus on Solar Radiation}
+
+\author[label1]{Cyril Voyant}\corref{cor1} 
+\author[label1]{Gilles Notton}\corref{cor1}%\fnref{label3}}
+\author[label1]{Jean-Laurent Duchaud}\corref{cor1}
+\author[label1]{Luis Garcia-Guiterrez}\corref{cor1} 
+\author[label2]{Jamie M. Bright}
+\author[label3]{Dazhi Yang}\corref{cor1} 
+\address[label1]{University of Corsica, SPE Laboratory, France}
+\address[label2]{UK Power Networks, London, UK}
+\address[label3]{Harbin Institute of Technology, School of Electrical Engineering and Automation, Harbin, Heilongjiang, China}
+
+\begin{abstract}
+With an ever-increasing share of intermittent renewable energy in the world's energy mix, the need for having advanced forecasting models of solar production, as to optimize operation and control of solar power plants, increases. In order to justify the need for more elaborated modeling, one has to compare the performance of advanced models with na\"ive reference methods. On this point, five na\"ive reference forecasting methods are considered, among which there is a newly proposed approach called ARTU (a particular autoregressive model of order two). These methods do not require any training phase nor demand any (or almost no) historical data. Additionally, motivated by the well-known benefits of ensemble forecasting, a combination of these models is considered, and then validated using data from multiple sites with diverse climatological characteristics, based on various error metrics, among which some are rarely used in the field of solar energy. The most appropriate benchmarking method depends on the salient features of the variable being forecast (e.g., seasonality, cyclicity, or conditional heteoroscedasity) as well as the forecast horizon. Hence, to ensure a fair benchmarking, forecasters should endeavor to discover the most appropriate na\"ive reference method for their setup by testing all available options.
+
+%% Text of abstract
+
+\end{abstract}
+
+%%Graphical abstract
+%%\begin{graphicalabstract}
+%\includegraphics{grabs}
+%%\end{graphicalabstract}
+
+%%Research highlights
+\begin{highlights}
+\item Proposal of six na\"ive reference forecasting methods, including a newly proposed one (SRM i.e.\ Statistical Reference Method) 
+\item No method requires a training phase or historical data (direct multi-step forecast strategy)
+\item Validation of results using data from multiple climates
+\item Test of an error metric rarely used in global solar radiation forecasting
+\item Use forecast combination to improve results
+\end{highlights}
+
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+Solar \sep Irradiation\sep Prediction \sep Persistence \sep Filtering \sep Exponential Smoothing \sep Combination \sep Benchmark \sep Reference \sep Forecast
+%% PACS codes here, in the form: \PACS code \sep code
+
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+
+\end{keyword}
+
+\end{frontmatter}
+
+ \linenumbers
+
+%% main text
+\input{1_Introduction}
+
+\input{2_Methodogical}
+
+\input{3_Experiment_setup}
+
+\input{4_Result}
+
+\input{5_conclusion}
+
+
+%\section*{Acknowledgment}
+%The authors would like to thank Pierre Pinson from Technical University of %Denmark for his help and valuable advice that have greatly improved the %readability of the paper.
+\bibliography{bib}
+
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+
+
+
+ \appendix
+ 
+ \section{Proof of CLIPER}
+ \label{appendix:cliper}
+ From Eq.(\ref{eq:eq4bis}):
+ \begin{equation}
+\mathbb{E}[x^c_{t+h}x^c_{t}]=\mathbb{E}[\alpha x^c_tx^c_t+\omega_{t+h}x^c_t],
+\end{equation}
+ and from the definition of a white noise ($\omega$ uncorrelated with other variables) and of a stationary process ($x^c$), it becomes $\mathbb{E}[\omega_{t+h}x^c_t]=0$. Then let $\sigma_{x}^2$ and $\gamma(h)$ be, respectively, the variance of $x_t$ (equal to the variance of $x^c_t$) and the autocovariance factors \citep{MakridakisSpyrosG1998F} between $x^c_t$ and $x^c_{t+h}$ \footnote{or $x^c_{t-h}$ because autocorrelation is an even function while $x^c_t\in \mathbb{R}$ is a wide-sense stationary process}, we observe that  $\mathbb{E}[x^c_{t}x^c_{t}]=\sigma_x^2$ and as $x^c_t$ is a centered variable, that $\mathbb{E}[x^c_{t}x^c_{t+h}]=\gamma(x^c_{t},x^c_{t+h})+(\mathbb{E}[x^c_t])^2\equiv\gamma(h)$.
+Hence, Eq.(\ref{eq:eq4bis}) can be modified and simplified as ($\mathbb{E}[z_{t+h}]=\mathbb{E}[z_t]$):
+
+\begin{equation}
+\label{eq:eq4ter}
+\gamma(h)=\mathbb{E}[\alpha x^c_tx^c_t]+\mathbb{E}[\omega_{t+h}x^c_t]=\alpha \sigma_x^2. 
+\end{equation}
+
+This implies that there is a simple link between $\alpha$ and the autocorrelation factor $\rho$ (defined from the ratio between the autocovariance and the variance):
+
+\begin{equation}
+\label{eq:eq4quad}
+\alpha=\gamma(h)/\sigma_x^2=\rho(h).
+\end{equation}
+
+Notice that considering the AR(1) model in Eq.(\ref{eq:eq1}) and the Yule--Walker equations or using Eq.(\ref{eq:eq4quad}) one can conclude that the prediction is now related to: 
+\begin{equation}
+\label{eq:eq44}
+\widehat{x}^c_{t+h}=\rho(h)  x^c_t,
+\end{equation}
+\noindent as $x^c_t=x_t-\mathbb{E}[x]$ and $\mathbb{E}[x]=\mathbb{E}[y]$, Eq.(\ref{eq:eq44}) can be replaced with:
+
+\begin{equation}
+\label{eq:eq45}
+\widehat{x}_{t+h}=\rho(h)  \left[x_t-\mathbb{E}(x)\right] +\mathbb{E}(x)=\rho(h)  \left[x_t-\mathbb{E}(y)\right] +\mathbb{E}(y).
+\end{equation}
+
+Let's not forget that $x_t$ is an unknown quantity but that it is possible to have a measure of it through the variable called $y_t$ (see Eq.(\ref{eq:eq2})), this leads us to the following result:
+
+\begin{equation}
+\label{eq:eq4}
+\widehat{x}_{t+h}=\rho(h)y_t+\left[1-\rho(h)\right]\mathbb{E}(y).
+\end{equation}
+
+From a classical point of view, this equation is no different than the forecast by an AR(1) model using Yule--Walker equations, in the case of solar radiation prediction, this predictor (convex combination\footnote{In convex geometry, a convex combination is a linear combination of points in an affine space where all coefficients are non-negative and sum to 1} between climatology and persistence) is a particular reference called ``climatology--persistence combination". It tends to become the reference model in comparative studies \citep{YANG2019981}.
+
+Note that by taking the expectation of Eq.(\ref{eq:eq1}) multiplied by $x^c_{t+h}$ and because  $\mathbb{E}[\omega_t x^c_t]=\sigma^2_{\omega}$, it becomes:
+
+\begin{equation}
+\label{eq:eq5}
+\sigma_x^2=\alpha \gamma(h)+\sigma^2_{\omega}.
+\end{equation}
+
+Replacing $\alpha$ with $\rho(h)$ in Eq.(\ref{eq:eq5}), we obtain: 
+
+\begin{equation}
+\label{eq:eq6}
+\sigma^2_{\omega}=\sigma_x^2[1-\rho(h)^2],
+\end{equation}
+
+\noindent where $\sigma^2_{\omega}$ corresponds to the forecast error estimated by the Euclidean norm (mean square error; MSE) in the unbiased case.
+Because the correlation coefficient $\rho(h)$ is between 0 and 1, $\sigma^2_{\omega}$ can take values between $\sigma_x^2$ ($\widehat{x}_{t+h}=\bar{y}$, see Section \ref{sec:subsec2}) and 0 ($\widehat{x}_{t+h}=y_t$, see Section \ref{sec:subsec1}). For example (see \ref{algo:ClimPers} for details), when $\rho(h)$ takes the value of 0.7, the model is written $\widehat{x}_{t+h}=0.7y_t+0.3\mathbb{E}(y)$ and the expected error is about $0.5\sigma_x^2$. Of course, this theoretical error is not observed in reality, since we make the assumption that the observed phenomenon can be modeled by an AR(1), which is not necessarily true and which thus induces an additional part of uncertainty and an increase in the observed error. 
+Moreover, the measurement error, represented by the parameter $\sigma^2_{v}$ in Eq.(\ref{eq:eq2}), also penalizes the forecast error.
+ 
+ \section{Proof of ARTU}
+ \label{proof}
+Equations \ref{eq:minus}-\ref{eq:eq8c} allow one to understand the link that can exist between a classical AR(2) and the method that we propose in this section: the prediction ($\widehat{x}_{t+h}$) depends on two previous measures ($y_t$ and $y_{t-h}$). The goal of this method is to find a mathematical formulation for $\alpha$ and $K$. A classic way to do this is to minimize the mean square error (MSE) which takes the form:
+
+\begin{equation}
+\label{eq:eq9}
+\textnormal{MSE}=\mathbb{E}\left[(x^c_{t+h}-\widehat{x}^c_{t+h})^2\right]=\mathbb{E}\left[(x^c_{t+h}-\alpha x^c_t-K(y^c_t-\widehat{x}^{c -}_{t}))^2\right].
+\end{equation}
+
+From Eq.(\ref{eq:eq2}), considering $v_t$ (variance $\sigma^2_{v}$) has a covariance with all random variables null, Eq.(\ref{eq:eq9}) can be replaced with Eq.(\ref{eq:eq10}). This simplification is possible under the assumption of orthogonality (or uncorrelation working with centered series). 
+
+\begin{equation}
+\label{eq:eq10}
+\textnormal{MSE}=K^2\sigma^2_{v}+\mathbb{E}(u)^2 ~\textnormal{with} ~u=x^c_{t+h}-\alpha x^c_t-x^cz_t+K\alpha x^c_{t-h}.
+\end{equation}
+
+A sufficient condition to find the optimal values of $\alpha$ and $K$ consists of finding their values that minimize the MSE, by equating to 0 its gradient. This is equivalent to solving $\partial \textnormal{MSE}/\partial K=0$ (see Eq.~\ref{eq:eq11}) and $\partial \textnormal{MSE}/\partial \alpha=0$ (see Eq.~\ref{eq:eq12}). Note that interchanging the derivative with expectation can be done using the dominated convergence theorem\footnote{It is one of the main theorems of Lebesgue's integration theory giving a sufficient condition for the convergence of expected values of random variables.}.
+
+\begin{equation}
+\label{eq:eq11}
+\frac{\partial \textnormal{MSE}}{\partial K}=2K\sigma^2_{v}+\frac{\partial \mathbb{E}(u)^2}{\partial K}=2K\sigma^2_{v}+\mathbb{E}\left(\frac{\partial u^2}{\partial u}\frac{\partial u}{\partial K}\right)=2K\sigma^2_{v}+2\mathbb{E}[u(\alpha x^c_{t-h}-x^c_t)]=0.
+\end{equation}
+
+An identical reasoning allows us to establish Eq.(\ref{eq:eq11}) and Eq.(\ref{eq:eq12}) concerning the derivative with respect to $K$ and $\alpha$. 
+
+\begin{equation}
+\label{eq:eq12}
+\frac{\partial \textnormal{MSE}}{\partial \alpha}=2\mathbb{E}[u(K x^c_{t-h}-x^c_t)]=0.
+\end{equation}
+
+After some mathematical simplifications, the solution of the problem amounts to finding $\alpha$ and $K$ solutions of the system described by Eq.(\ref{eq:eq13}). It is a system of quadratic equations with 2 unknowns ($K$ and $\alpha$) of degree 2.
+
+\begin{equation}
+\label{eq:eq13}
+\left \{
+\begin{array}{rcl}
+K(\sigma^2_{v}+\sigma_x^2)+\alpha\big(\gamma(2h)+\sigma_x^2\big)-2K\alpha\gamma(h)-\alpha^2\gamma(h)+K\alpha^2\sigma_x^2&=&\gamma(h) \\
+K\big(\gamma(2h)+\sigma_x^2\big)-2K\alpha\gamma(h)+\alpha\sigma_x^2-K^2\gamma(h)+K^2\alpha\sigma_x^2&=&\gamma(h)
+\end{array}
+ \right.
+\end{equation}
+
+Solving this system is not trivial, and it is best to slightly modify it to make the task easier. The more convenient form is certainly obtained dividing the two equations by $\sigma_x^2$ ($\in \mathbb{R^*}$) and defining a new variable $R=\sigma^2_{v}/\sigma_x^2$. A discussion about it is proposed in the Section \ref{sec:method}. This modification allows to highlight the auto-correlation coefficients $\rho$ as shown in Eq.(\ref{eq:eq14}). $\rho(h)$ is related to the correlation between $x^c_t$ and itself delayed by $h$ lags, while $\rho(2h)$ concerns a delay of $2h$ lags.
+
+\begin{equation}
+\label{eq:eq14}
+\left \{
+\begin{array}{rcl}
+K(1+R)+\alpha[1+\rho(2h)]-2K\alpha\rho(h)-\alpha^2\rho(h)+K\alpha^2&=&\rho(h) \\
+K[1+\rho(2h)]-2K\alpha\rho(h)+\alpha-K^2\rho(h)+K^2\alpha&=&\rho(h)
+\end{array}
+\right.
+\end{equation}
+
+Among the five couples of solutions, we retain only those that have a physical reality: the real ones (most of the time there are $2$). Rather than finding exact and symbolic solutions since there are no simple ones (according to our knowledge and what we could find in the literature), we propose to make them explicit by means of Levenberg–Marquardt algorithm \citep{10.1007/BFb0067700}. We used $100$ iterations with random initializations of the $2$ unknowns ($K$ and $\alpha$) between $-1$ and $1$. This method requires at each iteration to compute $(\textnormal{J}^\top \textnormal{J}+\lambda \textnormal{diag}(\textnormal{J}^\top \textnormal{J})^{-1})\textnormal{J}^\top$ where the Jacobian (J) is defined in Eq.(\ref{eq:eq14}) such as:  
+
+\begin{equation}
+\label{eq:eqJ}
+\textnormal{J}=
+ \begin{pmatrix} \alpha^2-2\rho(h)\alpha+1+R & \rho(2h) + 2K\alpha - 2K\rho(h) - 2\alpha\rho(h) + 1 \\ \rho(2h) + 2K\alpha - 2K\rho(h) - 2\alpha\rho(h) + 1 & K^2-2K\rho(h)+1. 
+ \end{pmatrix}.
+\end{equation}
+
+
+The Monge theorem allows to retain only the critical points compatible with a local minimum of the MSE. In mathematical analysis, this theorem is used to study the behavior of a function with two variables ($K$,$\alpha$) in the neighborhood of a critical point ($K^*,\alpha ^*$). The retained solutions satisfy the condition of the local extremity mentioned in Eq.(\ref{eq:monge}) and of strict local minimum point exposed in Eq.(\ref{eq:monge2}).
+
+\begin{equation}
+\label{eq:monge}
+\left[\frac{\partial^2 \textnormal{MSE}}{\partial K \partial \alpha}(K^*,\alpha^*)\right]^2-\frac{\partial^2 \textnormal{MSE}}{\partial K^2 }(K^*,\alpha^*)\frac{\partial^2 \textnormal{MSE}}{\partial \alpha^2 }(K^*,\alpha^*)<0,
+\end{equation}
+
+\begin{equation}
+\label{eq:monge2}
+\frac{\partial^2 \textnormal{MSE}}{\partial K^2 }(K^*,\alpha^*)>0.
+\end{equation}
+
+In case there is more than one solution (according to a particular triplet [$R$,$\rho(h)$,$\rho(2h)$]), we choose to calculate the associated MSE and to retain only those which minimize this quantity. This can be done from the two partial derivatives defined in Eq.(\ref{eq:eq14}) and respectively in Eq.(\ref{eq:partial1}) and Eq.(\ref{eq:partial2}) concerning $K$  and $\alpha$.
+
+\begin{equation}
+\label{eq:partial1}
+\frac{\partial \textnormal{MSE}}{\partial K}=K(1+R)+\alpha[1+\rho(2h)]-2K\alpha\rho(h)-\alpha^2\rho(h)+K\alpha^2-\rho(h),
+\end{equation}
+
+\begin{equation}
+\label{eq:partial2}
+\frac{\partial \textnormal{MSE}}{\partial \alpha}=K[1+\rho(2h)]-2K\alpha\rho(h)+\alpha-K^2\rho(h)+K^2\alpha-\rho(h).
+\end{equation}
+
+A succession of integration (with respect to $K$ then with respect to $\alpha$) allows to determinate without too much difficulty a function (MSE in our case) defined by its partial derivatives. The result is given in Eq.(\ref{eq:eq16}) with a constant of integration $c$ ($\in \mathbb{R}$).
+
+\begin{equation}
+\label{eq:eq16}
+\textnormal{\textnormal{MSE}}=K^2\left[\frac{R}{2}+\frac{1}{2}\right]-K\rho(h)-\alpha[K^2\rho(h)-K[\rho(2h)+1]+\rho(h)]+\alpha^2\left[\frac{K^2}{2}-K\rho(h)+\frac{1}{2}\right]+c
+\end{equation}
+ 
+ \section{Seasonality and Stationarity}
+\label{sec:season}
+The methods presented in Section \ref{sec:2} are based on the assumption that the time series studied are non-seasonal and devoid of trend. The latter hypothesis is always the case in meteorology on short time scales and particularly in solar radiation (stability of the Holocene climate) that has no significant inter-annual change (the annual average of the signal can be considered constant over a period of 10 years). The first hypothesis on the other hand is by nature invalid for weather series. Fortunately in solar energy forecasting, a transformation for removing the seasonality can be calculated very easily, via a clear-sky model \citep{SUN2021110087}. Clear-sky irradiance ($I_{CS}$) is the solar radiation incident on a horizontal surface under a cloud-free sky. Thus, the global horizontal irradiance ($I_{GH}$) are related to the seasonally adjusted variable, namely, the clear-sky index ($\kappa$), through the following:
+
+
+\begin{equation}
+\label{eq:S1}
+    x\equiv \kappa =I_{GH}/I_{CS},
+\end{equation}
+
+If $I_{CS}$ is well-modeled, in theory $x_t$ (the clear sky index) and $y_t$ (its measurement) are without seasonality and are bounded between $ 0 $ and somewhere between $ 1 $ and $1.5$---the upper bound would depend on the cloud meteorology; in practice, an upper bound of 1.2 is often used \citep{doi:10.1063/1.5094494}. However, in terms of seasonality, it has been shown that even the best clear-sky models today are unable to completely remove it, resulting in a nonstationary clear-sky index time series \citep{doi:10.1063/5.0003495}. In practice, $I_{CS}$ is often calculated from the Lambert--Beer type relations \citep{ineichen_broadband_2008} or using directly the data from CAMS McClear service \citep{Lefevre2013}. 
+
+ In the case of studying temperature and wind speed, the methodology is equivalent. $I_{CS}$ is replaced by the measure of the meteorological quantity by calculating for each hour of the year the average of the same hours concerning the previous years (model free). Generally, this procedure behaves as a particular kind of low-pass filter, and $I_{CS}$ is equivalent to smoothed series of temperature and wind speed.
+
+% Let the time decomposition presented in Eq.(\ref{eq:time_dec}) where $y$, $d$ and $h$ denote the sets of years, days and hours, respectively \citep{VOYANT2018121}. $I_{CS}(t)$ can be expressed from $I_{GH}(t)$($\equiv I_{GH}(y,d,h)$) using $I_{CS}(t)\equiv I_{CS}(d,h)=Y^{-1}\sum_{y=1}^Y I_{GH}(y,d,h)$ (Y is the number of within-sample years).
+% \begin{equation}
+% \label{eq:time_dec}
+% \begin{aligned}
+%     &t\equiv t(y,d,h)=H\times D(y-1) + H(d-1)+h,\\
+%     &\qquad\text{where } \left\{
+%     \begin{aligned}
+%         &y\in \mathbb{Z}\vert 1 \le y\le Y \\
+%         &d\in \mathbb{Z}\vert 1 \le d\le D(=365) \\
+%         &h\in \mathbb{Z}\vert 1 \le h\le H (=24)
+%     \end{aligned}\right.
+% \end{aligned}
+% \end{equation}
+
+% The major disadvantage of this approach is that it requires a significant number of years of measurements ($Y\gg 1$). In short, during studies relating to wind speed and temperature, the methods using $ I_{CS} $ are not really naive because they require a long history of measurements. However, we wish to demonstrate the usefulness of ARTU, so it is important to understand that this method is usable whatever the seasonal adjustment used; it is enough to approach the ideal case (weak stationarity) as much as possible no matter how it is performed.  
+
+The impact of seasonal adjustment can be quantified from Eq.(\ref{eq:24}) and the statistic $t(m)$ \citep{article7} or computing the squared $m$-th auto-correlation of the series and comparing it to a $\chi(1) ^2$ distribution as described in \cite{article8}.
+
+\begin{equation}
+\label{eq:24}
+    t(m)=q_{1-\alpha/2}\sqrt{\frac{1+2\sum_{i=1}^{m-1}\rho^2(i)}{n}},
+\end{equation}
+where $q$ is the quantile function of the standard normal distribution and $100(1 - \alpha)\%$ corresponds to the confidence level; a $90\%$ confidence level is often used. $m$ is the number of the periods within a seasonal cycle (for example,  24 and $8760=24$x365 for hourly data).
+So, the larger the value of $t(m)$, the larger the seasonality is. If $\lvert \rho(m)\lvert<t(m)$, the series can be considered deseasonalized. However, one must be careful because, like all statistical tests, this test is very sensitive to the size of the sample, so it is more relevant to subsample (randomly) the data if one wants a better interpretation of the test. We can assume $n=100$ without loss of generality. 
+
+It is important to note that the forecasting of solar radiation time series is a special topic. The models presented previously and simulated in the next Section do not refer to a consideration of seasonality because of the clear-sky model. Forecasting the clear-sky index, and using the Error--Trend--Seasonal (ETS, N=none, A=additive) framework terminology of \citet{Hynd2008}, PER and CLIM are (N,N,N), CLIPER, ES, ARTU and COMB are (A,N,N). None of them require an optimization and training phases and some of them can be used with only recent measurements.
+ 
+ 
+ \section{Algorithms}
+ \label{appendix}
+ The pseudo-codes detailed in this section are adapted to the case of global irradiation ($I_{GH}(t)$ with $t\in \{\overbrace{1,...,T^*,}^{InSample}\overbrace{T^*,...,T}^{OutSample}\}$) though they can be modified for any kind of time series. Up to now, we deliberately neglect the phenomena of over irradiance ($I_{GH}(t) \in [0,I_{CS}(t)]$), however depending on the time step, the clear sky model used and the quality of the time-stamp, it could be necessary to multiply $ I_{CS} $ by an arbitrary coefficient $\beta$ (generally between 1 and 2). Anyway, all models must make it possible to provide forecasts for all hours of the day and night, however the validation of the results is only performed on the daytime hours (authorizing solar elevation greater than $5-10^\circ$). Even if it is not the purpose of this study, it is important not to neglect the forecasts of the first and last hours of the daylight, they can be very important for energy management systems. Often, the real reasons for which a filtration is operated because of the poor quality of the detection concerning these hours and the strong repercussions (periodic peaks on $\kappa$) that a poor time-stamp can induce.
+
+ 
+\subsection{Persistence}
+\label{algo:Pers}
+This persistence predictor (Algorithm \ref{algo1}) is certainly the simplest method use in order to operate predictions with reliability. 
+
+\begin{algorithm}
+\caption{PER}
+\begin{algorithmic} 
+\label{algo1}
+\REQUIRE $ I_{CS}, I_{GH},h>0, \beta \in [1,2] $
+\ENSURE $\widehat{I}_{GH}(t+h)$ with $t \in [T^*,T]$
+\STATE {$n \leftarrow 0$}
+\REPEAT 
+\STATE $n\leftarrow n+1$
+\UNTIL {$I_{CS}(t-n) \ne 0$}
+\STATE {Pred$ \leftarrow min(I_{GH}(t-n)\times I_{CS}(t+h)/I_{CS}(t-n),\beta \times I_{CS}(t+h))$}
+\RETURN {Pred}
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Climatology}
+\label{algo:Clim}
+Even if this predictor (Algorithm \ref{algo2}) is never used in practice, it is an important way to gauge results in solar prediction study. When no model of knowledge is available, a moving average can be a good alternative. One of the characteristics of this model is that the observed forecast error is constant whatever the horizon considered. The filtering parameter ($\epsilon$) is usually taken close to 10 (Wh/m$^2$) while certain authors prefer use a threshold between $5^\circ$ and $10^\circ$ concerning the solar elevation. The information linked to the cloudiness being observable only in the presence of daylight, only these moments must be used. This means that at sun-up, it is the data from the day before that is used, so we understand the limit of statistical forecast models using only endogenous quantities.
+
+\begin{algorithm}
+\caption{CLIM}
+\begin{algorithmic} 
+\label{algo2}
+\REQUIRE $ I_{CS},I_{GH},h>0,\epsilon \in [1,30]  $
+\ENSURE $\widehat{I}_{GH}(t+h)$ with $t \in [T^*,T]$
+\FOR{$n:=1$ to $T^* $}
+\IF{$I_{CS}(n)<\epsilon$}
+\STATE{$\kappa(n)=\emptyset$}
+\ELSE
+\STATE $\kappa(n) \leftarrow I_{GH}(n)/I_{CS}(n)$
+\ENDIF
+\ENDFOR
+\STATE{$\bar{\kappa} \leftarrow $mean($\kappa(n))$}
+\STATE Pred$\kappa \leftarrow \bar{\kappa}$
+\STATE {Pred $\leftarrow$ Pred$\kappa \times I_{CS}(t+h)$}
+\RETURN {Pred}
+\end{algorithmic}
+\end{algorithm}
+ 
+ 
+  \subsection{Climatology Persistence}
+ \label{algo:ClimPers}
+CLIPER is undoubtedly the new standard of reference forecast for solar irradiation. As in the previous case (\ref{algo:Clim}), a filtering process is operated in Algorithm \ref{algo3} and  the $\epsilon$ parameter is considered for this task.
+ 
+\begin{algorithm}
+\caption{CLIPER}
+\begin{algorithmic} 
+\label{algo3}
+\REQUIRE $ I_{CS}, I_{GH},h>0, \beta \in [1,2], \epsilon \in [1,30] $
+\ENSURE $\widehat{I}_{GH}(t+h)$ with $t \in [T^*,T]$
+\FOR{$n:=1$ to $T^* $}
+\IF{$I_{CS}(n)<\epsilon$}
+\STATE{$\kappa(n)=\emptyset$}
+\ELSE
+\STATE $\kappa(n) \leftarrow I_{GH}(n)/I_{CS}(n)$
+\ENDIF
+\ENDFOR
+\STATE{$\bar{\kappa} \leftarrow $mean($\kappa(n))$}
+\STATE{$\rho\leftarrow $ACF$(\kappa(n),\kappa(n-h))$}
+\STATE{$nn \leftarrow 0$}
+\REPEAT 
+\STATE $nn\leftarrow nn+1$
+\UNTIL {$I_{CS}(t-nn) \geq \epsilon $ } 
+\STATE {Pred$\kappa \leftarrow min(\rho \times \kappa(t-nn)+(1-\rho)\times \bar{\kappa},\beta)$}
+\STATE {Pred $\leftarrow$ Pred$\kappa \times I_{CS}(t+h)$}
+\RETURN {Pred}
+\end{algorithmic}
+\end{algorithm}
+ 
+  \subsection{Exponential Smoothing}
+ \label{algo:ES}
+ In practice, it is not necessary to calculate the smoothing on all the in-sample data, limiting to a range covering the daily periodicity ($max = 24$ h) or 2 times this ($max = 48$ h) is sufficient to obtain good results (Algorithm \ref{algo4}).
+ 
+ 
+\begin{algorithm}
+\caption{ES}
+\begin{algorithmic} 
+\label{algo4}
+\REQUIRE $ I_{CS}, I_{GH},h>0,\beta \in [1,2], \epsilon \in [1,30], max \in [10-48] $
+\ENSURE $\widehat{I}_{GH}(t+h)$ with $t \in [T^*,T]$
+\FOR{$n:=1$ to $T^* $}
+\IF{$I_{CS}(n)<\epsilon$}
+\STATE$\kappa(n)=1$
+\ELSE
+\STATE $\kappa(n) \leftarrow I_{GH}(n)/I_{CS}(n)$
+\ENDIF
+\ENDFOR
+\STATE{$\bar{\kappa} \leftarrow $mean($\kappa(n))$}
+\STATE{$\rho\leftarrow $ACF$(\kappa(n),\kappa(n-h))$}
+\FOR{$nn:=0$ to $max-1 $}
+\IF{$I_{CS}(t-nn)<\epsilon$}
+\STATE{$\kappa(t-nn)=1$}
+\ELSE
+\STATE $\kappa(t-nn) \leftarrow I_{GH}(t-nn)/I_{CS}(t-nn)$
+\ENDIF
+\ENDFOR
+\STATE {Pred$\kappa \leftarrow min(\rho \times \sum_{i=0}^{max-1} (1-\rho)^i \times \kappa(t-i) +\bar{\kappa} \times (1-\rho)^{max},\beta)$}
+\STATE {Pred $\leftarrow$ Pred$\kappa \times I_{CS}(t+h)$}
+\RETURN {Pred}
+\end{algorithmic}
+\end{algorithm}
+ 
+  \subsection{Proposed Methodology \textnormal{(ARTU)}}
+ \label{algo:METH}
+In this version of the code (Algorithm \ref{algo5}), we propose to associate the night hours with a $\kappa$ equal to 1 but another way which is slightly more complex but which gives very good results consists in neglecting the night hours by removing them completely as done in the Algorithm \ref{algo3} ($\mathbf{if}$ $I_{CS}(n)<\epsilon$ $\mathbf{then}$ $\kappa(n)=\emptyset$). The method requires knowledge of $\alpha$ and $K$, which is achieved by interpolating the $\mathcal{M}(R)$ matrices (see \url{https://github.com/cyrilvoyant/ARTU.git}). Knowing the correlation coefficients ($\rho(h)$ and $\rho(2h) $) and the measurement reliability ($R = 0,0.01,0.05,0.1)$ the interpolation allows an estimate of $\alpha$ and $K$ for these three characteristic values.
+
+\begin{algorithm}
+\caption{ARTU}
+\begin{algorithmic} 
+\label{algo5}
+\REQUIRE $ I_{CS}, I_{GH},h>0,\beta \in [1,2], \epsilon \in [1,30], R \in [0,0.01,0.05,0.1], \mathcal{M}(R) $
+\ENSURE $\widehat{I}_{GH}(t+h)$ with $t \in [T^*,T]$
+\FOR{$n:=1$ to $T^* $}
+\IF{$I_{CS}(n)<\epsilon$}
+\STATE$\kappa(n)=1$
+\ELSE
+\STATE $\kappa(n) \leftarrow I_{GH}(n)/I_{CS}(n)$
+\ENDIF
+\ENDFOR
+\STATE{$\bar{\kappa} \leftarrow $mean($\kappa(n))$}
+\STATE{$\rho1\leftarrow $ACF$(\kappa(n),\kappa(n-h))$}
+\STATE{$\rho2\leftarrow $ACF$(\kappa(n),\kappa(n-2h))$}
+\STATE{$(\alpha,K) \leftarrow interpolate(\mathcal{M}(R),\rho1,\rho2,R)$}
+\STATE{$S\leftarrow \alpha+K$}
+\STATE{$P\leftarrow \alpha \times K$}
+\FOR{$nn:=0$ to $h $}
+\IF{$I_{CS}(t-nn)<\epsilon$}
+\STATE{$\kappa(t-nn)=1$}
+\ELSE
+\STATE $\kappa(t-nn) \leftarrow I_{GH}(t-nn)/I_{CS}(t-nn)$
+\ENDIF
+\ENDFOR
+\STATE {Pred$\kappa \leftarrow min(S \times \kappa(t)-P \times \kappa(t-h) + (1+P-S) \times \bar{\kappa},\beta)$}
+\STATE {Pred $\leftarrow$ Pred$\kappa \times I_{CS}(t+h)$}
+\RETURN {Pred}
+\end{algorithmic}
+\end{algorithm}
+
+
+%% If you have bibdatabase file and want bibtex to generate the
+%% bibitems, please use
+%%
+ %\bibliographystyle{model2-names.bst}\biboptions{authoryear}
+  %\bibliographystyle{elsarticle-harv} 
+  %\bibliography{bib}
+ %\bibliographystyle{cas-model2-names}
+
+%\bibliographystyle{model2-names.bst}\biboptions{authoryear}
+%\journal{{Solar Energy}}
+
+\end{document}
+
+\endinput
+%%
+%% End of file `elsarticle-template-harv.tex'.

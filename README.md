@@ -1,10 +1,30 @@
 # ARTU
-ARTU Predictive Method // Statistical Reference Method // Direct  Multi-Step  Forecast Strategy
 
-- Five algorithms descriptions (pseudo-codes) allowing to make a benchmark for the forecast of meteorological time series,
+Project: ARTU — documentation and data resources (PDF + dataset)
 
-- Dedicated matrices + code (Matlab files) concerning the ARTU method,
+Summary
+This repository contains the main documentation (ARTU.pdf) and associated data (K_alpha.zip).
 
-- Unzip the K_alpha files: 
--         =>  open the K_alpha.m scipt, exemples and descriptions are given, 
--         => [K,alpha] = K_alpha(0.5,0.6,2) for K and alpha values corresponding to Rhô(h)=0.5, Rhô(2h)=0.6 and R=5%.
+Top-level contents
+- `ARTU.pdf` — main documentation / paper
+- `K_alpha.zip` — data archive
+- `LICENSE` — project license
+
+Quick view / demo
+1. View the PDF online: https://github.com/cyrilvoyant/ARTU/blob/main/ARTU.pdf  
+2. Recommended: enable GitHub Pages and serve the `docs/` folder to provide a simple demo page that embeds the PDF and links the data.
+
+Enable GitHub Pages
+- Settings → Pages → Source: Branch `main` / folder `/docs`
+- After activation the demo will be available at `https://cyrilvoyant.github.io/ARTU/`
+
+Contributing
+Please open issues for any enhancements or fixes. See CONTRIBUTING.md for contribution guidelines.
+
+Planned improvements in this PR
+- Add `docs/index.html` demo page to preview ARTU.pdf and link the dataset
+- Add a basic GitHub Actions workflow to lint markdown/html
+- Add CONTRIBUTING.md and .gitignore
+
+License
+See LICENSE in the repository.

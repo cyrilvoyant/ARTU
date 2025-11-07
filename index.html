@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ARTU — Demo</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin: 0; padding: 0; color: #111; }
+    header { background:#0b5cff;color:white;padding:1rem; }
+    main { padding:1rem; max-width:1000px;margin:0 auto; }
+    .pdf-frame { width:100%; height:80vh; border:1px solid #ddd; }
+    .links { margin-top:1rem; display:flex; gap:1rem; flex-wrap:wrap; }
+    .btn { background:#0b5cff;color:white;padding:.5rem .75rem;border-radius:6px;text-decoration:none; }
+    footer { padding:1rem; text-align:center; color:#666; font-size:.9rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ARTU — Quick Preview</h1>
+  </header>
+  <main>
+    <p>This repository contains the main documentation (ARTU.pdf) and a dataset (K_alpha.zip).</p>
+
+    <section>
+      <h2>PDF preview</h2>
+      <!-- Display the PDF in an iframe if supported -->
+      <iframe class="pdf-frame" src="ARTU.pdf" title="ARTU PDF">
+        This browser cannot display the PDF inline. Download it here:
+        <a href="ARTU.pdf">Download ARTU.pdf</a>
+      </iframe>
+    </section>
+
+    <div class="links">
+      <a class="btn" href="ARTU.pdf" target="_blank" rel="noopener">Open ARTU.pdf</a>
+      <a class="btn" href="K_alpha.zip" target="_blank" rel="noopener">Download K_alpha.zip</a>
+    </div>
+
+    <section style="margin-top:1.5rem;">
+      <h2>About</h2>
+      <p>Add a short description of the project, goals, and how to use the data here.</p>
+    </section>
+  </main>
+
+  <footer>
+    <small>To publish: enable GitHub Pages (branch `main`, folder `/docs`).</small>
+  </footer>
+</body>
+</html>

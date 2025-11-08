@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use ARTU, please cite this repository and the related benchmark paper."
+title: "ARTU: Utilities for Solar Radiation and PV Time-Series Forecasting (MATLAB)"
+authors:
+  - family-names: Voyant
+    given-names: Cyril
+    orcid: "https://orcid.org/0000-0003-0242-7377"
+url: "https://github.com/cyrilvoyant/ARTU"
+repository-code: "https://github.com/cyrilvoyant/ARTU"
+license: "GPL-3.0"
+version: "1.0.0"
+date-released: "2025-11-08"
+keywords:
+  - solar radiation forecasting
+  - GHI
+  - PV
+  - time series
+  - benchmarks
+  - persistence
+  - AR
+  - ELM
+  - skill score
+  - nRMSE
+  - nMAE
+references:
+  - type: article
+    authors:
+      - family-names: Voyant
+        given-names: Cyril
+    title: "Benchmarks for solar radiation time series forecasting"
+    journal: "Renewable Energy"
+    volume: "191"
+    start: "747"
+    end: "762"
+    year: "2022"
+    doi: "10.1016/j.renene.2022.04.065"

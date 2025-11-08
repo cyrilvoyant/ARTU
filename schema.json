@@ -1,0 +1,53 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "SoftwareSourceCode",
+  "name": "ARTU",
+  "alternateName": "Adaptive (Auto) Renewable Time-series Utilities",
+  "description": "MATLAB utilities for solar radiation and PV time-series forecasting: data prep, persistence/AR/ELM baselines, error metrics (nRMSE, nMAE, skill), cross-validation, and benchmark scripts aligned with Renewable Energy (2022) benchmarks.",
+  "url": "https://github.com/cyrilvoyant/ARTU",
+  "codeRepository": "https://github.com/cyrilvoyant/ARTU",
+  "programmingLanguage": "MATLAB",
+  "license": "GPL-3.0",
+  "version": "1.0.0",
+  "author": {
+    "@type": "Person",
+    "name": "Cyril Voyant",
+    "url": "https://cyrilvoyant.com",
+    "identifier": "https://orcid.org/0000-0003-0242-7377"
+  },
+  "keywords": [
+    "solar radiation forecasting",
+    "global horizontal irradiance (GHI)",
+    "photovoltaic power (PV)",
+    "time series forecasting",
+    "benchmarks",
+    "persistence",
+    "AR / ARIMA",
+    "Extreme Learning Machine (ELM)",
+    "neural networks",
+    "clear-sky index",
+    "skill score",
+    "nRMSE",
+    "nMAE",
+    "intraday horizons",
+    "day-ahead",
+    "cross-validation",
+    "forecast evaluation"
+  ],
+  "citation": [
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Benchmarks for solar radiation time series forecasting",
+      "datePublished": "2022",
+      "journalName": "Renewable Energy",
+      "volume": "191",
+      "pageStart": "747",
+      "pageEnd": "762",
+      "doi": "10.1016/j.renene.2022.04.065",
+      "author": [
+        { "@type": "Person", "name": "Cyril Voyant" },
+        { "@type": "Person", "name": "co-authors et al." }
+      ]
+    }
+  ]
+}

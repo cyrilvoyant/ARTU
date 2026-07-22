@@ -2,36 +2,32 @@
   "@context": "https://schema.org/",
   "@type": "SoftwareSourceCode",
   "name": "ARTU",
-  "alternateName": "Adaptive (Auto) Renewable Time-series Utilities",
-  "description": "MATLAB utilities for solar radiation and PV time-series forecasting: data prep, persistence/AR/ELM baselines, error metrics (nRMSE, nMAE, skill), cross-validation, and benchmark scripts aligned with Renewable Energy (2022) benchmarks.",
+  "alternateName": "Second-order autoregressive reference method for solar radiation forecasting",
+  "description": "Reference implementation and technical documentation for ARTU, a second-order autoregressive naive benchmark for solar irradiance forecasting, alongside four classical reference methods (Persistence, Climatology, CLIPER, Exponential Smoothing). Includes the K_alpha bilinear-interpolation lookup tables used by ARTU's second-order update, aligned with the Renewable Energy (2022) benchmark paper.",
   "url": "https://github.com/cyrilvoyant/ARTU",
   "codeRepository": "https://github.com/cyrilvoyant/ARTU",
   "programmingLanguage": "MATLAB",
-  "license": "GPL-3.0",
+  "license": "https://spdx.org/licenses/MIT",
   "version": "1.0.0",
   "author": {
     "@type": "Person",
     "name": "Cyril Voyant",
-    "url": "https://cyrilvoyant.com",
+    "url": "https://person.cyrilvoyant.com",
     "identifier": "https://orcid.org/0000-0003-0242-7377"
   },
   "keywords": [
     "solar radiation forecasting",
     "global horizontal irradiance (GHI)",
-    "photovoltaic power (PV)",
     "time series forecasting",
     "benchmarks",
     "persistence",
-    "AR / ARIMA",
-    "Extreme Learning Machine (ELM)",
-    "neural networks",
+    "CLIPER",
+    "autoregressive model",
+    "ARTU",
     "clear-sky index",
     "skill score",
     "nRMSE",
     "nMAE",
-    "intraday horizons",
-    "day-ahead",
-    "cross-validation",
     "forecast evaluation"
   ],
   "citation": [
@@ -46,7 +42,11 @@
       "doi": "10.1016/j.renene.2022.04.065",
       "author": [
         { "@type": "Person", "name": "Cyril Voyant" },
-        { "@type": "Person", "name": "co-authors et al." }
+        { "@type": "Person", "name": "Gilles Notton" },
+        { "@type": "Person", "name": "Jean-Laurent Duchaud" },
+        { "@type": "Person", "name": "Luis Antonio Garcia-Gutierrez" },
+        { "@type": "Person", "name": "Jamie M. Bright" },
+        { "@type": "Person", "name": "Dazhi Yang" }
       ]
     }
   ]

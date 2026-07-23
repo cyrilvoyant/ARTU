@@ -1,0 +1,55 @@
+cff-version: 1.2.0
+message: "If you use ARTU, please cite this repository and the related benchmark paper (see preferred-citation)."
+title: "ARTU: A Second-Order Autoregressive Reference Method for Solar Radiation Forecasting"
+type: software
+authors:
+  - family-names: Voyant
+    given-names: Cyril
+    website: "https://person.cyrilvoyant.com"
+    orcid: "https://orcid.org/0000-0003-0242-7377"
+url: "https://github.com/cyrilvoyant/ARTU"
+repository-code: "https://github.com/cyrilvoyant/ARTU"
+license: "MIT"
+version: "1.0.0"
+date-released: "2022-04-01"
+abstract: >
+  Reference implementation and technical documentation for ARTU, a
+  second-order autoregressive naive benchmark for solar irradiance
+  forecasting, alongside four classical reference methods (Persistence,
+  Climatology, CLIPER, Exponential Smoothing). Includes the K_alpha
+  bilinear-interpolation lookup tables used by ARTU's second-order update.
+keywords:
+  - solar radiation forecasting
+  - GHI
+  - clear-sky index
+  - time series
+  - benchmarks
+  - persistence
+  - CLIPER
+  - autoregressive model
+  - ARTU
+  - skill score
+  - nRMSE
+  - nMAE
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Voyant
+      given-names: Cyril
+    - family-names: Notton
+      given-names: Gilles
+    - family-names: Duchaud
+      given-names: Jean-Laurent
+    - family-names: Garcia-Gutierrez
+      given-names: Luis Antonio
+    - family-names: Bright
+      given-names: Jamie M.
+    - family-names: Yang
+      given-names: Dazhi
+  title: "Benchmarks for solar radiation time series forecasting"
+  journal: "Renewable Energy"
+  volume: "191"
+  start: "747"
+  end: "762"
+  year: "2022"
+  doi: "10.1016/j.renene.2022.04.065"

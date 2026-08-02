@@ -1,5 +1,6 @@
 # ARTU — Statistical Reference Forecasting Methods for Solar Radiation
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21755931.svg)](https://doi.org/10.5281/zenodo.21755931)
 Reference implementation and technical documentation for **ARTU**, a second-order autoregressive naive benchmark introduced for solar irradiance forecasting, together with four classical reference methods it is built alongside: Persistence, Climatology, CLIPER, and Exponential Smoothing. Companion resource for:
 
 > C. Voyant, G. Notton, J.-L. Duchaud, L. A. Garcia-Gutierrez, J. M. Bright, D. Yang, "Benchmarks for solar radiation time series forecasting," *Renewable Energy*, vol. 191, pp. 747-762, 2022. https://doi.org/10.1016/j.renene.2022.04.065 ([arXiv:2203.14959](https://arxiv.org/abs/2203.14959))

@@ -1,0 +1,31 @@
+{
+  "@context": "https://w3id.org/codemeta/3.0",
+  "@type": "SoftwareSourceCode",
+  "name": "ARTU: A Second-Order Autoregressive Reference Method for Solar Radiation Forecasting",
+  "description": "Reference implementation and technical documentation for ARTU, a second-order autoregressive naive benchmark for solar irradiance forecasting, alongside four classical reference methods (Persistence, Climatology, CLIPER, Exponential Smoothing). Includes the K_alpha bilinear-interpolation lookup tables used by the ARTU second-order update.",
+  "version": "1.0.0",
+  "dateModified": "2022-04-01",
+  "license": "https://spdx.org/licenses/MIT",
+  "codeRepository": "https://github.com/cyrilvoyant/ARTU",
+  "identifier": "https://doi.org/10.5281/zenodo.21755931",
+  "programmingLanguage": "MATLAB",
+  "developmentStatus": "active",
+  "applicationCategory": "Solar energy forecasting",
+  "keywords": ["solar radiation forecasting", "GHI", "clear-sky index", "time series", "benchmarks", "persistence", "CLIPER", "autoregressive model", "ARTU", "renewable energy"],
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Cyril",
+      "familyName": "Voyant",
+      "@id": "https://orcid.org/0000-0003-0242-7377",
+      "url": "https://person.cyrilvoyant.com",
+      "affiliation": {"@type": "Organization", "name": "Mines Paris - PSL, Centre Observation, Impacts, Energie (O.I.E.), Sophia Antipolis, France"}
+    }
+  ],
+  "referencePublication": {
+    "@type": "ScholarlyArticle",
+    "name": "Benchmarks for solar radiation time series forecasting",
+    "identifier": "https://doi.org/10.1016/j.renene.2022.04.065",
+    "datePublished": "2022"
+  }
+}

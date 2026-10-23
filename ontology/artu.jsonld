@@ -1,0 +1,142 @@
+[
+  {
+    "@id": "https://github.com/cyrilvoyant/ARTU#software",
+    "@type": [
+      "https://schema.org/SoftwareSourceCode"
+    ],
+    "https://github.com/cyrilvoyant/ARTU#input": [
+      {
+        "@id": "https://github.com/cyrilvoyant/ARTU#corrh"
+      },
+      {
+        "@id": "https://github.com/cyrilvoyant/ARTU#corr2h"
+      },
+      {
+        "@id": "https://github.com/cyrilvoyant/ARTU#Q"
+      }
+    ],
+    "https://github.com/cyrilvoyant/ARTU#intendedOutput": [
+      {
+        "@id": "https://github.com/cyrilvoyant/ARTU#K"
+      },
+      {
+        "@id": "https://github.com/cyrilvoyant/ARTU#alpha"
+      }
+    ],
+    "https://schema.org/citation": [
+      {
+        "@id": "https://doi.org/10.1016/j.renene.2022.04.065"
+      }
+    ],
+    "https://schema.org/codeRepository": [
+      {
+        "@id": "https://github.com/cyrilvoyant/ARTU"
+      }
+    ],
+    "https://schema.org/description": [
+      {
+        "@value": "Archive currently blocked by undefined R in K_alpha.m; documentation is not an executable adapter."
+      }
+    ],
+    "https://schema.org/identifier": [
+      {
+        "@id": "https://doi.org/10.5281/zenodo.21755931"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "ARTU coefficient lookup archive"
+      }
+    ],
+    "https://schema.org/programmingLanguage": [
+      {
+        "@value": "MATLAB"
+      }
+    ]
+  },
+  {
+    "@id": "https://github.com/cyrilvoyant/ARTU#corrh",
+    "@type": [
+      "https://schema.org/PropertyValue"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "Lag-h autocorrelation"
+      }
+    ],
+    "https://schema.org/unitCode": [
+      {
+        "@id": "http://qudt.org/vocab/unit/UNITLESS"
+      }
+    ]
+  },
+  {
+    "@id": "https://github.com/cyrilvoyant/ARTU#K",
+    "@type": [
+      "https://schema.org/PropertyValue"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "Intended K coefficient"
+      }
+    ],
+    "https://schema.org/unitCode": [
+      {
+        "@id": "http://qudt.org/vocab/unit/UNITLESS"
+      }
+    ]
+  },
+  {
+    "@id": "https://github.com/cyrilvoyant/ARTU#corr2h",
+    "@type": [
+      "https://schema.org/PropertyValue"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "Lag-2h autocorrelation"
+      }
+    ],
+    "https://schema.org/unitCode": [
+      {
+        "@id": "http://qudt.org/vocab/unit/UNITLESS"
+      }
+    ]
+  },
+  {
+    "@id": "https://github.com/cyrilvoyant/ARTU#Q",
+    "@type": [
+      "https://schema.org/PropertyValue"
+    ],
+    "https://schema.org/description": [
+      {
+        "@value": "Intended discrete selector 0,1,2,3; archive instead references undefined R."
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "Reliability table selector"
+      }
+    ],
+    "https://schema.org/unitCode": [
+      {
+        "@id": "http://qudt.org/vocab/unit/UNITLESS"
+      }
+    ]
+  },
+  {
+    "@id": "https://github.com/cyrilvoyant/ARTU#alpha",
+    "@type": [
+      "https://schema.org/PropertyValue"
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "Intended alpha coefficient"
+      }
+    ],
+    "https://schema.org/unitCode": [
+      {
+        "@id": "http://qudt.org/vocab/unit/UNITLESS"
+      }
+    ]
+  }
+]

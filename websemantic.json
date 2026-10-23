@@ -1,0 +1,16 @@
+{
+  "schema_version": "artu-documentation-contract-1",
+  "integration_status": "documentation_only_not_registered_with_websemantic",
+  "execution_status": "blocked_undefined_R_in_archived_function",
+  "software": {"repository": "https://github.com/cyrilvoyant/ARTU", "source_commit": "11aefa42049c737c1e6d845a5428d29aa48dd506", "entry_point": "K_alpha.zip::K_alpha.m", "runtime": "MATLAB", "doi": "10.5281/zenodo.21755931", "license": "MIT"},
+  "inputs": {
+    "corrh": {"type": "finite_real_scalar", "required": true, "unit": "http://qudt.org/vocab/unit/UNITLESS", "source_comment_bounds_exclusive": [-1,1]},
+    "corr2h": {"type": "finite_real_scalar", "required": true, "unit": "http://qudt.org/vocab/unit/UNITLESS", "source_comment_bounds_exclusive": [-1,1]},
+    "Q": {"type": "integer", "required": true, "enum": [0,1,2,3], "intended_table_mapping": ["R0.mat","R0.01.mat","R0.05.mat","R0.1.mat"], "unit": "dimensionless_table_selector", "implemented_correctly": false}
+  },
+  "context_required": ["training_period", "clear_sky_index_definition", "sampling_interval", "forecast_horizon", "reliability_level"],
+  "outputs_intended_only": {"K": {"unit": "http://qudt.org/vocab/unit/UNITLESS"}, "alpha": {"unit": "http://qudt.org/vocab/unit/UNITLESS"}},
+  "constraints": ["Do not expose as executable until source correction and validation", "Correlation pair feasibility is not established by bounds alone", "Table files must be available to MATLAB", "No automatic substitution from another repository"],
+  "validation": {"runtime": "MATLAB R2025b", "call": "K_alpha(0.6,0.4,2)", "observed_error": "MATLAB:UndefinedFunction: Unrecognized function or variable 'R'."},
+  "article_doi": "10.1016/j.renene.2022.04.065"
+}

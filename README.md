@@ -28,6 +28,8 @@ This ARTU update rule (and the `K_alpha` lookup table interpolation it depends o
 
 ## Usage
 
+**Execution status:** the distributed `K_alpha.zip` function currently declares `Q` but references undefined `R`, so the example below errors before returning coefficients. See the [verified use contract](llm.md). The archive is preserved unchanged; it requires a separately reviewed code correction before direct use.
+
 ```matlab
 % Unzip K_alpha.zip into your MATLAB path, then given the lag-h and lag-2h
 % clear-sky-index autocorrelations (corrh, corr2h) and a reliability level Q:
@@ -37,6 +39,8 @@ This ARTU update rule (and the `K_alpha` lookup table interpolation it depends o
 See `ARTU.pdf`, Algorithm 5, for the full ARTU update using `K`/`alpha`.
 
 ## Citation
+
+Machine-readable documentation: [descriptor](websemantic.json), [Turtle](ontology/artu.ttl), [JSON-LD](ontology/artu.jsonld). These describe the known execution limitation and do not register a runnable WebSemantic adapter.
 
 If you use this code or method, please cite the paper above (see [`citation.cff`](citation.cff)).
 

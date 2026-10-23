@@ -14,7 +14,7 @@ Reference implementation and technical documentation for **ARTU**, a second-orde
 
 ## The methods (from `ARTU.pdf`)
 
-All five operate on the clear-sky index $\kappa(t)=I_{GH}(t)/I_{CS}(t)$ (global horizontal irradiance normalized by a clear-sky model), with $\kappa=1$ substituted whenever $I_{CS}(t)$ falls below a solar-elevation threshold $\varepsilon$ (night/twilight):
+The solar algorithms use clear-sky normalization $\kappa(t)=I_{GH}(t)/I_{CS}(t)$. Their nighttime conventions differ: CLIM/CLIPER exclude low-clear-sky samples from fitting; ES/ARTU use $\kappa=1$ below the clear-sky irradiance or irradiation threshold $\varepsilon$ in the supplied note. That threshold is not a solar-elevation angle. PER seeks a previous nonzero clear-sky value. Preserve the same physical units and accumulation interval in measured and clear-sky inputs.
 
 - **PER (Persistence)**: propagates the last valid clear-sky index forward, $\widehat{I}_{GH}(t+h)=\min\big(I_{GH}(t-n)\cdot I_{CS}(t+h)/I_{CS}(t-n),\ \gamma\cdot I_{CS}(t+h)\big)$, clipped by an over-irradiance factor $\gamma\in[1,2]$.
 - **CLIM (Climatology)**: forecasts using the mean clear-sky index over the whole training sample, $\widehat\kappa=\overline\kappa$ — a naive floor that any useful model should beat.

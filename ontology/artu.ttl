@@ -8,11 +8,11 @@ cv:software a schema:SoftwareSourceCode ;
  schema:programmingLanguage "MATLAB" ;
  schema:citation <https://doi.org/10.1016/j.renene.2022.04.065> ;
  schema:identifier <https://doi.org/10.5281/zenodo.21755931> ;
- schema:description "Archive currently blocked by undefined R in K_alpha.m; documentation is not an executable adapter." ;
+ schema:description "K_alpha.m corrected on 2026-10-23 (undefined R); matches the paper example. Documentation, not an executable adapter." ;
  cv:input cv:corrh, cv:corr2h, cv:Q ;
  cv:intendedOutput cv:K, cv:alpha .
 cv:corrh a schema:PropertyValue ; schema:name "Lag-h autocorrelation" ; schema:unitCode unit:UNITLESS .
 cv:corr2h a schema:PropertyValue ; schema:name "Lag-2h autocorrelation" ; schema:unitCode unit:UNITLESS .
-cv:Q a schema:PropertyValue ; schema:name "Reliability table selector" ; schema:description "Intended discrete selector 0,1,2,3; archive instead references undefined R." ; schema:unitCode unit:UNITLESS .
+cv:Q a schema:PropertyValue ; schema:name "Reliability table selector" ; schema:description "Discrete selector 0,1,2,3 for R = 0, 0.01, 0.05, 0.1 (R = noise variance over signal variance); default 2." ; schema:unitCode unit:UNITLESS .
 cv:K a schema:PropertyValue ; schema:name "Intended K coefficient" ; schema:unitCode unit:UNITLESS .
 cv:alpha a schema:PropertyValue ; schema:name "Intended alpha coefficient" ; schema:unitCode unit:UNITLESS .

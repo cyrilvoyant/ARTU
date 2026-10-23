@@ -35,7 +35,7 @@
     ],
     "https://schema.org/description": [
       {
-        "@value": "Archive currently blocked by undefined R in K_alpha.m; documentation is not an executable adapter."
+        "@value": "K_alpha.m corrected on 2026-10-23 (undefined R); matches the paper example. Documentation, not an executable adapter."
       }
     ],
     "https://schema.org/identifier": [
@@ -109,7 +109,7 @@
     ],
     "https://schema.org/description": [
       {
-        "@value": "Intended discrete selector 0,1,2,3; archive instead references undefined R."
+        "@value": "Discrete selector 0,1,2,3 for R = 0, 0.01, 0.05, 0.1 (R = noise variance over signal variance); default 2."
       }
     ],
     "https://schema.org/name": [

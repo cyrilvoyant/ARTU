@@ -1,7 +1,7 @@
 {
   "schema_version": "artu-documentation-contract-1",
   "integration_status": "documentation_only_not_registered_with_websemantic",
-  "execution_status": "blocked_undefined_R_in_archived_function",
+  "execution_status": "corrected_2026_10_23_matches_paper_example",
   "software": {
     "repository": "https://github.com/cyrilvoyant/ARTU",
     "source_commit": "11aefa42049c737c1e6d845a5428d29aa48dd506",
@@ -65,15 +65,31 @@
     }
   },
   "constraints": [
-    "Do not expose as executable until source correction and validation",
+    "State the reliability level used (Q or R); the function defaults to R = 0.05",
     "Correlation pair feasibility is not established by bounds alone",
     "Table files must be available to MATLAB",
     "No automatic substitution from another repository"
   ],
   "validation": {
     "runtime": "MATLAB R2025b",
-    "call": "K_alpha(0.6,0.4,2)",
-    "observed_error": "MATLAB:UndefinedFunction: Unrecognized function or variable 'R'."
+    "date": "2026-10-23",
+    "call": "K_alpha(0.4,0.3,Q) for Q = 1, 2, 3",
+    "expected_from_paper": {
+      "R=0.01": {
+        "K": -0.27,
+        "alpha": 0.6
+      },
+      "R=0.05": {
+        "K": -0.25,
+        "alpha": 0.59
+      },
+      "R=0.1": {
+        "K": -0.23,
+        "alpha": 0.58
+      }
+    },
+    "observed": "identical to two decimals",
+    "previous_defect": "undefined R in K_alpha.m (Q was the input), corrected"
   },
   "article_doi": "10.1016/j.renene.2022.04.065",
   "scientific_authority": "arXiv:2203.14959v1 Section2.2.1, Eqs.10–16; ARTU.pdf Algorithm5",

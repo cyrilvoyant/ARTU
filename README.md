@@ -28,12 +28,13 @@ This ARTU update rule (and the `K_alpha` lookup table interpolation it depends o
 
 ## Usage
 
-**Execution status:** the distributed `K_alpha.zip` function currently declares `Q` but references undefined `R`, so the example below errors before returning coefficients. See the [verified use contract](llm.md). The archive is preserved unchanged; it requires a separately reviewed code correction before direct use.
+**Execution status:** corrected on 23 October 2026. The archived function tested an undefined variable `R` instead of its input `Q`; it now selects the table from `Q` (or directly from R = 0.01, 0.05 or 0.1), defaults to Q = 2 (R = 0.05, the value used in the paper) and rejects other values. The lookup tables are unchanged. Check: `K_alpha(0.4, 0.3, Q)` returns (K, α) = (−0.27, 0.60), (−0.25, 0.59) and (−0.23, 0.58) for R = 0.01, 0.05 and 0.1, the values of the paper's example (h = 1, ρ(1) = 0.4, ρ(2) = 0.3; MATLAB R2025b, 23 October 2026). See the [use contract](llm.md).
 
 ```matlab
 % Unzip K_alpha.zip into your MATLAB path, then given the lag-h and lag-2h
 % clear-sky-index autocorrelations (corrh, corr2h) and a reliability level Q:
 [K, alpha] = K_alpha(corrh, corr2h, Q);   % Q in {0,1,2,3} -> R in {0, 0.01, 0.05, 0.1}
+% Paper example (h = 1): K_alpha(0.4, 0.3, 2) gives K = -0.25, alpha = 0.59
 ```
 
 See `ARTU.pdf`, Algorithm 5, for the full ARTU update using `K`/`alpha`.
